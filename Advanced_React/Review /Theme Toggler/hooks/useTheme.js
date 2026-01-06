@@ -7,5 +7,16 @@ const useTheme = () => {
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
 
-  const onToggleTheme = () => {};
+  const onToggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
+  const isDarkTheme = theme === "dark";
+
+  return {
+    onToggleTheme,
+    isDarkTheme,
+  };
 };
+
+export { useTheme };
